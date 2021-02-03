@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
-import { User } from "./user.model";
 
 const restaurantSchema = mongoose.Schema({
   name: { type: String, required: true },
   score: { type: Number, default: 0 },
   photos: [{ type: String }],
-  comments: [{ user: { type: mongoose.Types.ObjectId, ref: User }, text: { type: String, required: true } }],
+  comments: [{ user: { type: mongoose.Types.ObjectId, ref: "User" }, text: { type: String, required: true } }],
   city: { type: String, required: true }
 })
 
