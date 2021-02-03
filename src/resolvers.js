@@ -1,3 +1,4 @@
+import RestaurantModel from "./models/restaurant.model";
 import UserModel from "./models/user.model";
 
 export default {
@@ -14,6 +15,10 @@ export default {
   Mutation: {
     async createUser(_, {input}) {
       const response = await UserModel.create(input);
+      return response;
+    },
+    async createRestaurant(_, {input}) {
+      const response = await RestaurantModel.create(input);
       return response;
     }
   },
