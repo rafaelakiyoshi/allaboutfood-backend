@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
-const url = `mongodb+srv://rafael:31avUVms9qP8rxc6@akiyoshi.jztaa.mongodb.net/allaboutfood?retryWrites=true&w=majority`;
+const host = process.env.DB_HOST;
+const username = process.env.DB_USER;
+const password = process.env.DB_PASS;
+
+const url = `mongodb+srv://rafael:${password}@${username}.jztaa.mongodb.net/${host}?retryWrites=true&w=majority`;
 const dbOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
